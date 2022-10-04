@@ -43,8 +43,8 @@ body {
 }
 
 .menu li:hover a{
-  background-color: aqua;
-  color: #191c32;
+  background-color: rgb(4, 145, 145);
+  color: #fff;
 }
 
 .menu .active {
@@ -409,7 +409,7 @@ h1 {
   border-radius: 20px;
   border: none;
   text-transform: uppercase;
-  background-color: aqua;
+  background-color:  rgb(7, 156, 156);;
 }
 
 
@@ -421,7 +421,7 @@ h1 {
   width: 100vw;
   height: 200px;
   padding: 2em;
-  background-color: aqua;
+  background-color: rgb(7, 156, 156);
 }
 
 .footer_contenido h2 {
