@@ -108,7 +108,7 @@ h1 {
 }
 
 .Informacion img {
-  width: 100%;
+  width: 90%;
   grid-column: 1/5;
 }
 
