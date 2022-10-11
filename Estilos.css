@@ -101,10 +101,13 @@ h1 {
 }
 
 .Informacion {
+  font-size: 1.5em;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   width: 100vw;
   align-items: center;
+  background-color:lightblue;
+  color:black;
 }
 
 .Informacion img {
@@ -124,9 +127,9 @@ h1 {
 }
 
 .divi {
-  height: 4px;
-  width: 60px;
-  background-color: aqua;
+  height: 1px;
+  width: 140px;
+  background-color: rgb(5, 5, 5);
   margin-top: 5px;
   margin-bottom: 2em;
 }
@@ -332,12 +335,13 @@ h1 {
 }
 
 .card__titulo {
+  justify-content: center;
   padding: 20px;
 }
 
 .cardlinks {
   display: flex;
-  justify-content: space-evenly;
+ 
 }
 .cardlinks a {
   color: #fff;
@@ -453,9 +457,4 @@ h1 {
   align-items:flex-start;
 }
 
-.Icono2 i {
-  display: flex;
-  font-size:3em;
-  justify-content: center;
-  align-items:flex-start;
-}
+
