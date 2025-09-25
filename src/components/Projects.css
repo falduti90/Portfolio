@@ -1,0 +1,138 @@
+.project-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+  transition: left 0.7s;
+}
+
+.project-card:hover::before {
+  left: 100%;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.tag {
+  transition: all 0.3s ease;
+}
+
+.project-card:hover .tag {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+}
+
+/* Efecto de "cola" al pasar el mouse */
+.project-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  transition: width 0.5s ease;
+}
+
+.project-card:hover::after {
+  width: 100%;
+}
+
+/* Efecto de brillo en las esquinas */
+.corner-glow {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.corner-glow-tl {
+  top: 0;
+  left: 0;
+  border-top: 2px solid #3b82f6;
+  border-left: 2px solid #3b82f6;
+}
+
+.corner-glow-tr {
+  top: 0;
+  right: 0;
+  border-top: 2px solid #8b5cf6;
+  border-right: 2px solid #8b5cf6;
+}
+
+.corner-glow-bl {
+  bottom: 0;
+  left: 0;
+  border-bottom: 2px solid #3b82f6;
+  border-left: 2px solid #3b82f6;
+}
+
+.corner-glow-br {
+  bottom: 0;
+  right: 0;
+  border-bottom: 2px solid #8b5cf6;
+  border-right: 2px solid #8b5cf6;
+}
+
+.project-card:hover .corner-glow {
+  opacity: 1;
+}
+
+/* Animación de título */
+.project-title {
+  background: linear-gradient(90deg, #f5f5f5, #d4d4d4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover .project-title {
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Efecto de partículas en hover (simulado con pseudo-elementos) */
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: #3b82f6;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.particle-1 { top: 20%; left: 10%; }
+.particle-2 { top: 10%; left: 80%; }
+.particle-3 { top: 70%; left: 15%; }
+.particle-4 { top: 85%; left: 75%; }
+
+.project-card:hover .particle {
+  animation: float 2s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.2); }
+}
+
+.particle-1 { animation-delay: 0s; }
+.particle-2 { animation-delay: 0.5s; }
+.particle-3 { animation-delay: 1s; }
+.particle-4 { animation-delay: 1.5s; }
