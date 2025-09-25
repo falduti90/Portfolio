@@ -5,18 +5,13 @@ export default function Contact() {
   const formRef = useRef()
   const FORM_ID = import.meta.env.VITE_FORMSPREE_ID
 
-  // Función para descargar el CV
+  // Función para descargar el CV - CORREGIDA para Dropbox
   const downloadCV = () => {
-    // Ruta al archivo CV - CORREGIDA
-    const cvUrl = '/cv/CV_ATS_MF.pdf'
+    // URL de Dropbox para descarga directa (cambiamos dl=0 por dl=1)
+    const dropboxUrl = 'https://www.dropbox.com/scl/fi/bwg7itbs8lmqvhiwfjreo/CV_ATS_MF.pdf?rlkey=lhhz9ipg1dof70pcqyfzmwv52&st=u4ac8150&dl=1'
     
-    // Crear un enlace temporal para la descarga - CORREGIDO
-    const link = document.createElement('a')
-    link.href = cvUrl
-    link.download = 'CV_ATS_MF.pdf'
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+    // Abrir en nueva pestaña para descarga
+    window.open(dropboxUrl, '_blank', 'noopener,noreferrer')
   }
 
   const onSubmit = async (e) => {
@@ -103,7 +98,6 @@ export default function Contact() {
         )}
       </form>
       
-      {/* Sección de botones de contacto alternativos */}
       <div className="mt-6 grid md:grid-cols-2 gap-4">
         <div>
           <p className="text-sm text-gray-600 mb-2">Contacto directo por WhatsApp</p>
