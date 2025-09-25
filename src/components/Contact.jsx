@@ -5,6 +5,20 @@ export default function Contact() {
   const formRef = useRef()
   const FORM_ID = import.meta.env.VITE_FORMSPREE_ID
 
+  // Función para descargar el CV
+  const downloadCV = () => {
+    // Ruta al archivo CV - CORREGIDA
+    const cvUrl = '/cv/CV_ATS_MF.pdf'
+    
+    // Crear un enlace temporal para la descarga - CORREGIDO
+    const link = document.createElement('a')
+    link.href = cvUrl
+    link.download = 'CV_ATS_Desarrollador.pdf'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   const onSubmit = async (e) => {
     e.preventDefault()
     if (!FORM_ID) { 
@@ -23,7 +37,7 @@ export default function Contact() {
       })
 
       if (res.ok) {
-        formRef.current.reset() // ✅ Usamos la referencia aquí
+        formRef.current.reset()
         setState({ sending: false, ok: true, error: '' })
         setTimeout(() => setState(s => ({ ...s, ok: false })), 5000)
       } else {
@@ -89,20 +103,32 @@ export default function Contact() {
         )}
       </form>
       
-<div className="mt-4">
-  <p className="text-sm text-gray-600 mb-2">O si preferís, contactame por WhatsApp</p>
-  <a 
-    href="https://wa.me/5491131292991"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200"
-  >
-    <span>💬</span>
-    WhatsApp
-  </a>
-</div>
-
-
+      {/* Sección de botones de contacto alternativos */}
+      <div className="mt-6 grid md:grid-cols-2 gap-4">
+        <div>
+          <p className="text-sm text-gray-600 mb-2">Contacto directo por WhatsApp</p>
+          <a 
+            href="https://wa.me/5491131292991"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 w-full bg-green-500 hover:bg-green-600 text-white font-medium py-3 px-4 rounded-xl transition-colors duration-200"
+          >
+            <span>💬</span>
+            WhatsApp
+          </a>
+        </div>
+        
+        <div>
+          <p className="text-sm text-gray-600 mb-2">Descargar mi CV ATS</p>
+          <button 
+            onClick={downloadCV}
+            className="inline-flex items-center justify-center gap-2 w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-4 rounded-xl transition-colors duration-200"
+          >
+            <span>📄</span>
+            Descargar CV ATS
+          </button>
+        </div>
+      </div>
     </section>
   )
 }
