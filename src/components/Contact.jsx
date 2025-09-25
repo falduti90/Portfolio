@@ -89,12 +89,20 @@ export default function Contact() {
         )}
       </form>
       
-      <p className="text-xs text-neutral-500 mt-2">
-        Si preferís, WhatsApp: 
-        <a className="underline" href="https://wa.me/5491131292991">
-          Contame Por WhatSapp
-        </a>
-      </p>
+<div className="mt-4">
+  <p className="text-sm text-gray-600 mb-2">O si preferís, contactame por WhatsApp</p>
+  <a 
+    href="https://wa.me/5491131292991"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200"
+  >
+    <span>💬</span>
+    WhatsApp
+  </a>
+</div>
+
+
     </section>
   )
 }
