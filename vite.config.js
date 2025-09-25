@@ -5,5 +5,5 @@ const isProd = process.env.NODE_ENV === 'production'
 
 export default defineConfig({
   plugins: [react()],
-  base: isProd ? '/__REPO_NAME__/' : '/', // local '/', GitHub Pages '/repo/'
+  base: isProd ? '/Portfolio/' : '/',   // 👈 nombre real del repo
 })
