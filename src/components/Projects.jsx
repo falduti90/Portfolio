@@ -1,5 +1,5 @@
 import React from 'react';
-import './Projects.css'; // Asegúrate de que esta línea esté así
+import './Projects.css';
 
 const Projects = () => {
   const projects = [
@@ -14,6 +14,18 @@ const Projects = () => {
       desc: "Sistema de turnos para clientes que interactúa con el WMS y ERP. Los clientes eligen los pedidos que van a retirar. Desarrollado con .NET Core, HTML, CSS y Bootstrap.", 
       tags: [".NET Core", "HTML/CSS", "Bootstrap", "WhatsApp Business API"],
       status: "blue"
+    },
+    { 
+      name: "Implementación Softland", 
+      desc: "Implementación de Softland en el área de cuenta corriente y contabilidad. Configuración de factura electrónica, impuestos, nuevas sucursales, reportes y procesos automáticos para facturación.", 
+      tags: ["Softland", "Factura Electrónica", "Impuestos", "Automatización", "SQL Server"],
+      status: "orange"
+    },
+    { 
+      name: "Sistema de Cobranza Web", 
+      desc: "Implementación del sistema de cobranza web con sincronización de comprobantes, interfaces API y tareas automáticas.", 
+      tags: ["Cobranza Web", "API", "Sincronización", "Tareas Automáticas", "React", ".NET Core"],
+      status: "red"
     },
     { 
       name: "Kiri Fan UTN", 
@@ -33,7 +45,9 @@ const Projects = () => {
     green: "bg-green-500",
     blue: "bg-blue-500",
     purple: "bg-purple-500",
-    yellow: "bg-yellow-500"
+    yellow: "bg-yellow-500",
+    orange: "bg-orange-500",
+    red: "bg-red-500"
   };
 
   return (
