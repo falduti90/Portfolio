@@ -13,7 +13,7 @@ export default function Contact() {
     // Crear un enlace temporal para la descarga - CORREGIDO
     const link = document.createElement('a')
     link.href = cvUrl
-    link.download = 'CV_ATS_Desarrollador.pdf'
+    link.download = 'CV_ATS_MF.pdf'
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
