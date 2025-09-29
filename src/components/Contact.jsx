@@ -8,7 +8,7 @@ export default function Contact() {
   // Función para descargar el CV - CORREGIDA para Dropbox
   const downloadCV = () => {
     // URL de Dropbox para descarga directa (cambiamos dl=0 por dl=1)
-    const dropboxUrl = 'https://www.dropbox.com/scl/fi/bwg7itbs8lmqvhiwfjreo/CV_ATS_MF.pdf?rlkey=lhhz9ipg1dof70pcqyfzmwv52&st=u4ac8150&dl=1'
+    const dropboxUrl = 'https://www.dropbox.com/preview/Cv_MatiasFalduti_ATS%20(1).pdf?context=content_suggestions&role=personal'
     
     // Abrir en nueva pestaña para descarga
     window.open(dropboxUrl, '_blank', 'noopener,noreferrer')
